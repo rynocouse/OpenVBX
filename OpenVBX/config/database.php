@@ -43,7 +43,7 @@ $active_group = "default";
 $active_record = TRUE;
 
 $db["default"]["hostname"] = $_SERVER['RDS_HOSTNAME'] . ':' . $_SERVER['RDS_PORT'];
-$db["default"]["username"] = $_SERVER['RDS_USERNAME';
+$db["default"]["username"] = $_SERVER['RDS_USERNAME'];
 $db["default"]["password"] = $_SERVER['RDS_PASSWORD'];
 $db["default"]["database"] = $_SERVER['RDS_DB_NAME'];
 $db["default"]["dbdriver"] = "mysql";
