@@ -16,11 +16,11 @@ $config['server_name'] = $_SERVER['HTTP_HOST'];
 | URL to your CodeIgniter root. Typically this will be your base URL,
 | WITH a trailing slash:
 |
-|	http://example.com/
+|   http://example.com/
 |
 */
 $config['base_url']= "http".((!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off')? 's' : '')
-	  				 ."://".$config['server_name']. rtrim(WEB_ROOT, '/').'/';
+                     ."://".$config['server_name']. rtrim(WEB_ROOT, '/').'/';
 
 /*
 |--------------------------------------------------------------------------
@@ -125,22 +125,22 @@ $config['index_page'] = 'index.php';
 | URI string.  The default setting of "AUTO" works for most servers.
 | If your links do not seem to work, try one of the other delicious flavors:
 |
-| 'AUTO'			Default - auto detects
-| 'PATH_INFO'		Uses the PATH_INFO
-| 'QUERY_STRING'	Uses the QUERY_STRING
-| 'REQUEST_URI'		Uses the REQUEST_URI
-| 'ORIG_PATH_INFO'	Uses the ORIG_PATH_INFO
+| 'AUTO'            Default - auto detects
+| 'PATH_INFO'       Uses the PATH_INFO
+| 'QUERY_STRING'    Uses the QUERY_STRING
+| 'REQUEST_URI'     Uses the REQUEST_URI
+| 'ORIG_PATH_INFO'  Uses the ORIG_PATH_INFO
 |
 */
-if(isset($_REQUEST['vbxsite'])) 
+if(isset($_REQUEST['vbxsite']))
 {
-	/* For mod_rewrite  */
-	$config['uri_protocol'] = 'REQUEST_URI';
-} 
-else 
+    /* For mod_rewrite  */
+    $config['uri_protocol'] = 'REQUEST_URI';
+}
+else
 {
-	/* For non mod_rewrite users - experimental */
-	$config['uri_protocol']	= "PATH_INFO";
+    /* For non mod_rewrite users - experimental */
+    $config['uri_protocol'] = "PATH_INFO";
 }
 
 /*
@@ -166,7 +166,7 @@ $config['url_suffix'] = "";
 | than english.
 |
 */
-$config['language']	= "english";
+$config['language'] = "english";
 
 /*
 |--------------------------------------------------------------------------
@@ -249,9 +249,9 @@ $config['permitted_uri_chars'] = 'a-z 0-9~%.:_\-';
 |
 */
 $config['enable_query_strings'] = TRUE;
-$config['controller_trigger'] 	= 'c';
-$config['function_trigger'] 	= 'm';
-$config['directory_trigger'] 	= 'd'; // experimental not currently in use
+$config['controller_trigger']   = 'c';
+$config['function_trigger']     = 'm';
+$config['directory_trigger']    = 'd'; // experimental not currently in use
 
 /*
 |--------------------------------------------------------------------------
@@ -263,11 +263,11 @@ $config['directory_trigger'] 	= 'd'; // experimental not currently in use
 | You can enable error logging by setting a threshold over zero. The
 | threshold determines what gets logged. Threshold options are:
 |
-|	0 = Disables logging, Error logging TURNED OFF
-|	1 = Error Messages (including PHP errors)
-|	2 = Debug Messages
-|	3 = Informational Messages
-|	4 = All Messages
+|   0 = Disables logging, Error logging TURNED OFF
+|   1 = Error Messages (including PHP errors)
+|   2 = Debug Messages
+|   3 = Informational Messages
+|   4 = All Messages
 |
 | For a live site you'll usually only enable Errors (1) to be logged otherwise
 | your log files will fill up very fast.
@@ -328,16 +328,16 @@ $config['encryption_key'] = "";
 | 'encrypt_sess_cookie' = TRUE/FALSE (boolean).  Whether to encrypt the cookie
 | 'session_expiration'  = the number of SECONDS you want the session to last.
 |  by default sessions last 7200 seconds (two hours).  Set to zero for no expiration.
-| 'time_to_update'		= how many seconds between CI refreshing Session Information
+| 'time_to_update'      = how many seconds between CI refreshing Session Information
 |
 */
-$config['sess_cookie_name']		= 'openvbx_session';
-$config['sess_expiration']		= 7200;
-$config['sess_encrypt_cookie']	= FALSE;
-$config['sess_use_database']	= FALSE;
-$config['sess_table_name']		= 'sessions';
-$config['sess_match_ip']		= FALSE;
-$config['sess_time_to_update'] 	= 300;
+$config['sess_cookie_name']     = 'openvbx_session';
+$config['sess_expiration']      = 7200;
+$config['sess_encrypt_cookie']  = FALSE;
+$config['sess_use_database']    = FALSE;
+$config['sess_table_name']      = 'sessions';
+$config['sess_match_ip']        = FALSE;
+$config['sess_time_to_update']  = 300;
 
 /*
 |--------------------------------------------------------------------------
@@ -349,12 +349,12 @@ $config['sess_time_to_update'] 	= 300;
 | 'cookie_path'   =  Typically will be a forward slash
 |
 */
-$config['cookie_prefix']	= "";
-$config['cookie_domain']	= parse_url($config['base_url'], PHP_URL_HOST);
-$config['cookie_path']		= WEB_ROOT;
+$config['cookie_prefix']    = "";
+$config['cookie_domain']    = parse_url($config['base_url'], PHP_URL_HOST);
+$config['cookie_path']      = WEB_ROOT;
 if(empty($config['cookie_path']))
 {
-	$config['cookie_path'] = '/';
+    $config['cookie_path'] = '/';
 }
 
 /*
@@ -435,7 +435,7 @@ $config['proxy_ips'] = '';
 |
 | Curl certificates on some systems are either incomplete or out of date and
 | this can effect connectivity to the Twilio API. If you're getting an error
-| "error:14090086:SSL routines:SSL3_GET_SERVER_CERTIFICATE:certificate verify 
+| "error:14090086:SSL routines:SSL3_GET_SERVER_CERTIFICATE:certificate verify
 | failed (0)" then set the option below to true.
 |
 */
@@ -449,9 +449,9 @@ $config['twilio_use_certificate'] = false;
 | Sometimes your local environment just needs some things to be overridden
 |
 */
-if (is_file(APPPATH.'config/config-local.php')) 
+if (is_file(APPPATH.'config/config-local.php'))
 {
-	include_once(APPPATH.'config/config-local.php');
+    include_once(APPPATH.'config/config-local.php');
 }
 
 /* End of file config.php */
