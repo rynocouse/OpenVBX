@@ -114,7 +114,7 @@ $config['enable_profiler'] = FALSE;
 | variable so that it is blank.
 |
 */
-$config['index_page'] = 'index.php';
+$config['index_page'] = '';
 
 /*
 |--------------------------------------------------------------------------
@@ -142,6 +142,10 @@ else
     /* For non mod_rewrite users - experimental */
     $config['uri_protocol'] = "PATH_INFO";
 }
+
+
+    $config['uri_protocol'] = 'REQUEST_URI';
+    $config['index_page'] = '';
 
 /*
 |--------------------------------------------------------------------------
